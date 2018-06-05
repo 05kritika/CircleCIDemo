@@ -23,3 +23,5 @@ Access ```http://localhost:8080/spring3```
 
 ###4. Project Demo
 Please refer to this article [Maven - Spring 3 MVC Hello World ](http://www.mkyong.com/spring3/spring-3-mvc-hello-world-example/)
+
+[![Build Status](https://travis-ci.org/05kritika/spring3-mvc-maven-xml-hello-world.svg?branch=master)](https://travis-ci.org/05kritika/spring3-mvc-maven-xml-hello-world)
