@@ -1,0 +1,21 @@
+language: java
+jdk: oraclejdk8
+install: true
+env:
+  - MAVEN_VERSION=3.2.5
+  - MAVEN_VERSION=3.3.9
+install:
+  - "mvn -N io.takari:maven:wrapper -Dmaven=${MAVEN_VERSION}"
+  - "./mvnw --show-version --errors --batch-mode test-compile dependency:go-offline"
+script: "./mvnw --show-version --errors --batch-mode -Prun-its clean verify"
+cache:
+  directories:
+  - $HOME/.m2
+  
+  deploy:
+  provider: bintray
+  file: "Path to a descriptor file, containing information for the Bintray upload"
+  user: "05kritika"
+  key: "Bintray API key"
+  #passphrase: "Optional. In case a passphrase is configured on Bintray and GPG signing is used"
+  skip_cleanup: true # to upload artifacts created during the build
